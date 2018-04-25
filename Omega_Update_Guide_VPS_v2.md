@@ -6,7 +6,7 @@ This Installation GUIDE will show you how to Update your Omegacoin Masternode to
 
 Shell script to run as Root to update a [Omegacoin Masternode](http://omegacoin.network/) on a Linux server running Ubuntu 16.04. Use it on your own risk.
 ```
-wget -q https://cdn.rawgit.com/Natizyskunk/omegacoin/6943b703/Omega_Update_VPS.sh
+wget -q https://cdn.rawgit.com/Natizyskunk/omegacoin/b503d32f/Omega_Update_VPS.sh
 bash Omega_Update_VPS.sh
 ```
 Follow the instructions as this will install all requirements.
