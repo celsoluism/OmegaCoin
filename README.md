@@ -5,6 +5,7 @@ Omega coin is a powerful masternode-based PoW cryptocurrency.
 
 #
 
+- Omega Linux VPS Masternode wallet Update Guide for Omegacoincore-0.12.5.1[https://github.com/Natizyskunk/omegacoin/blob/master/Omega_Update_Guide_VPS_v2.md]
 
 ### SPECIFICATIONS
 | Specification | Value |
@@ -16,8 +17,3 @@ Omega coin is a powerful masternode-based PoW cryptocurrency.
 | Total Coin Supply | `20.000.000 OMEGA` |
 | Port | `7777` |
 | RPC Port | `7778` |
-
-
-- Omega Linux VPS Masternode wallet Update Guide for Omegacoincore-0.12.5.1[https://github.com/Natizyskunk/omegacoin/blob/master/Omega_Update_Guide_VPS_v2.md]
-
-- 
