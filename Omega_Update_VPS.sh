@@ -1,6 +1,20 @@
-#!/bin/bash
-##### Omagecoincore-0.12.5.1-linux64 VPS Updater script by Natizydkunk@Github. #####
-##### Inspired by the omagecoincore-0.12.5.1-linux64 Updated GUIDE by click2install#9625 from Omegacoin Official Discord. #####
+#/bin/bash
+
+cd ~
+echo "****************************************************************************"
+echo "* Omagecoincore-0.12.5.1-linux64 VPS Updater script by Natizydkunk@Github. *"
+echo "*                                                                          *"
+echo "*      Inspired by the omagecoincore-0.12.5.1-linux64 Updated GUIDE        *"
+echo "*          by click2install#9625 from Omegacoin Official Discord.          *"
+echo "****************************************************************************"
+echo && echo && echo
+echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+echo "!                                                 !"
+echo "! Make sure you double check before hitting enter !"
+echo "!                                                 !"
+echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+echo && echo && echo
+
 
 TMP_FOLDER=$(mktemp -d)
 CONFIG_FILE='omegacoin.conf'
@@ -19,15 +33,17 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m'
 
-function stop_daemon {
+echo "Do you really want to update omegacoincore wallet (no if you did it before)? [y/n]"
+read DOSETUP
+
+if [[ $DOSETUP =~ "y" ]] ; then
+  ### stop_daemon ###
   omegacoin-cli stop
-}
 
-function remove_binaries {
+  ### remove_binaries ###
   sudo rm -f /usr/bin/*omega*
-}
 
-function download_node() {
+  ### download_node ###
   echo -e "Preparing to download ${GREEN}$COIN_NAME${NC} binary files."
   cd $TMP_FOLDER >/dev/null 2>&1
   wget -q $COIN_ZIP
@@ -40,31 +56,23 @@ function download_node() {
   cd - >/dev/null 2>&1
   rm -rf $TMP_FOLDER >/dev/null 2>&1
   clear
-}
 
-function backup_old_config() {
+  ### backup_old_config ###
   cd /root/
   cp -r .omegacoincore/ .omegacoincore-backup/
-}
 
-function remove_old_config() {
+  ### remove_old_config ###
   cd /root/
   cd .omegacoincore/
   mkdir /tmp_omegacoin_backup && mv omegacoin.conf masternode.conf wallet.dat /tmp_omegacoin_backup/
   rm -rf !(omegacoin.conf|masternode.conf|wallet.dat)
   mv /tmp_omegacoin_backup/* . && rmdir /tmp_omegacoin_backup
-}
 
-function restart_daemon() {
+  ### restart_daemon ###
   omegacoind -daemon
-}
-
-function check_status() {
   omegacoin-cli getinfo
-EOF
-}
+fi
 
-function checks() {
 if [[ $(lsb_release -d) != *16.04* ]]; then
   echo -e "${RED}You are not running Ubuntu 16.04. Installation is cancelled.${NC}"
   exit 1
@@ -79,35 +87,19 @@ if [ -n "$(pidof $COIN_DAEMON)" ] || [ -e "$COIN_DAEMOM" ] ; then
   echo -e "${RED}$COIN_NAME is already installed.${NC}"
   exit 1
 fi
-}
 
-function important_information() {
- echo
- echo -e "================================================================================================================================"
- echo -e "$COIN_NAME Masternode is up and running listening on port ${RED}$COIN_PORT${NC}."
- echo -e "Configuration file is: ${RED}$CONFIGFOLDER/$CONFIG_FILE${NC}"
- echo -e "Start: ${RED}systemctl start $COIN_NAME.service${NC}"
- echo -e "Stop: ${RED}systemctl stop $COIN_NAME.service${NC}"
- echo -e "VPS_IP:PORT ${RED}$NODEIP:$COIN_PORT${NC}"
- echo -e "MASTERNODE PRIVATEKEY is: ${RED}$COINKEY${NC}"
- echo -e "Please check ${RED}$COIN_NAME${NC} daemon is running with the following command: ${RED}systemctl status $COIN_NAME.service${NC}"
- echo -e "================================================================================================================================"
-}
 
-function setup_node() {
-  stop_daemon 
-  remove_binaries
-  download_node
-  backup_old_config
-  remove_old_config
-  restart_daemon
-  check_status
-  important_information
-}
+echo
+echo -e "================================================================================================================================"
+echo -e "$COIN_NAME Masternode is up and running listening on port ${RED}$COIN_PORT${NC}."
+echo -e "Configuration file is: ${RED}$CONFIGFOLDER/$CONFIG_FILE${NC}"
+echo -e "Start: ${RED}systemctl start $COIN_NAME.service${NC}"
+echo -e "Stop: ${RED}systemctl stop $COIN_NAME.service${NC}"
+echo -e "VPS_IP:PORT ${RED}$NODEIP:$COIN_PORT${NC}"
+echo -e "MASTERNODE PRIVATEKEY is: ${RED}$COINKEY${NC}"
+echo -e "Please check ${RED}$COIN_NAME${NC} daemon is running with the following command: ${RED}systemctl status $COIN_NAME.service${NC}"
+echo -e "================================================================================================================================"
 
 
 ##### Main #####
 clear
-
-checks
-setup_node
