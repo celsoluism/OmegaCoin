@@ -3,7 +3,7 @@
 # OMEGA NETWORK
 Omega coin is a powerful masternode-based PoW cryptocurrency.
 
-- Omega Linux VPS Masternode wallet Update Guide for Omegacoincore-0.12.5.1[https://github.com/Natizyskunk/omegacoin/blob/master/Omega_Update_Guide_VPS_v2.md]
+- [Omega Linux VPS Masternode wallet Update Guide for Omegacoincore-0.12.5.1](https://github.com/Natizyskunk/omegacoin/blob/master/Omega_Update_Guide_VPS_v2.md)
 
 #
 
