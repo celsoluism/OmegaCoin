@@ -25,8 +25,8 @@ cd
 cd .omegacoincore/
 rm -rf !(omegacoin.conf)
 ```
-## if the command above doesnt work run these commands one at a time
-## if it doesnt work you will get an "event not found" error
+4.a. if the command above doesnt work run these commands one at a time.
+if it doesnt work you will get an "event not found" error
 ```
 rm -rf b*
 rm -rf c*
