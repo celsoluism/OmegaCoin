@@ -21,6 +21,7 @@ NC='\033[0m'
 
 function stop_daemon {
   omegacoin-cli stop
+  sleep 10
 }
 
 function remove_binaries {
