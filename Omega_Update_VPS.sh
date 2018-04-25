@@ -93,11 +93,12 @@ echo
 echo -e "================================================================================================================================"
 echo -e "$COIN_NAME Masternode is up and running listening on port ${RED}$COIN_PORT${NC}."
 echo -e "Configuration file is: ${RED}$CONFIGFOLDER/$CONFIG_FILE${NC}"
-echo -e "Start: ${RED}systemctl start $COIN_NAME.service${NC}"
-echo -e "Stop: ${RED}systemctl stop $COIN_NAME.service${NC}"
+echo -e "Start: ${RED}COIN_DAEMON -daemon${NC}"
+echo -e "Stop: ${RED}$COIN_CLI stop${NC}"
 echo -e "VPS_IP:PORT ${RED}$NODEIP:$COIN_PORT${NC}"
-echo -e "MASTERNODE PRIVATEKEY is: ${RED}$COINKEY${NC}"
-echo -e "Please check ${RED}$COIN_NAME${NC} daemon is running with the following command: ${RED}systemctl status $COIN_NAME.service${NC}"
+echo -e "Please check ${RED}$COIN_NAME${NC} daemon is running with the following command: ${RED}$COIN_CLI masternode status${NC}"
+echo -e "Also check ${RED}$COIN_NAME${NC} daemon info with the following command: ${RED}$COIN_CLI getinfo${NC}"
+echo -e "Can Also check ${RED}$COIN_NAME${NC} masternode sync status with the following command: ${RED}$COIN_CLI mnsync status${NC}"
 echo -e "================================================================================================================================"
 
 
