@@ -21,7 +21,6 @@ NC='\033[0m'
 
 function stop_daemon {
   omegacoin-cli stop
-  sleep 10
 }
 
 function remove_binaries {
@@ -59,6 +58,7 @@ function remove_old_config() {
 
 function restart_daemon() {
   omegacoind -daemon
+  sleep 10
 }
 
 function check_status() {
