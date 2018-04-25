@@ -1,7 +1,7 @@
 ## [GUIDE] omagecoincore-0.12.5.1-linux64 VPS v.2 Update by @click2install#9625 on Omegacoin Official Discord.
 
-if this is useful, donations are welcome: <BR />
-OMEGA: oPfxf87Zk4zPKnDBdgdfXx4mPVM1eeCcZB
+**if this is useful, donations are welcome: <BR />
+**OMEGA: oPfxf87Zk4zPKnDBdgdfXx4mPVM1eeCcZB
 
 1. Stop the daemon
 ```
