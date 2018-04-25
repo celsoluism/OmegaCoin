@@ -62,7 +62,6 @@ function restart_daemon() {
 
 function check_status() {
   omegacoin-cli getinfo
-EOF
 }
 
 function checks() {
