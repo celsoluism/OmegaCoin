@@ -18,7 +18,7 @@ echo && echo && echo
 echo "Do you really want to update omegacoincore wallet (no if you did it before)? [y/n]"
 read DOSETUP
 
-if [[ $DOSETUP =~ "y" ]] ; 
+if [[ $DOSETUP =~ y ]] ; 
 then
   TMP_FOLDER=$(mktemp -d)
   CONFIG_FILE='omegacoin.conf'
@@ -47,16 +47,16 @@ then
 
   function download_node() {
     echo -e "Preparing to download ${GREEN}$COIN_NAME${NC} binary files."
-    cd $TMP_FOLDER >/dev/null 2>&1
+    cd "$TMP_FOLDER" >/dev/null 2>&1
     wget -q $COIN_ZIP
     unzip omagecoincore-0.12.5.1-linux64.zip -d .
-    chmod +x *omega*
+    chmod +x ./*omega*
     rm -f omagecoincore-0.12.5.1-linux64.zip
     chmod +x ./$COIN_DAEMON
     chmod +x ./$COIN_CLI
     cp $COIN_DAEMON $COIN_CLI $COIN_PATH
     cd - >/dev/null 2>&1
-    rm -rf $TMP_FOLDER >/dev/null 2>&1
+    rm -rf "$TMP_FOLDER" >/dev/null 2>&1
     clear
   }
 
@@ -69,7 +69,7 @@ then
     cd /root/
     cd .omegacoincore/
     mkdir /tmp_omegacoin_backup && mv omegacoin.conf masternode.conf wallet.dat /tmp_omegacoin_backup/
-    rm -rf *
+    rm -rf ./*
     mv /tmp_omegacoin_backup/* . && rmdir /tmp_omegacoin_backup
   }
 
