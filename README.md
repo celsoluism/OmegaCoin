@@ -3,19 +3,6 @@
 # OMEGA NETWORK
 Omega coin is a powerful masternode-based PoW cryptocurrency.
 
-## Updating from omegacoincore-0.12.5 to omegacoincore-0.12.5.1 on Linux VPS Masternode:
-
-| **GUIDES:** |
-|:-----------|
-| - [Step by step manual guide (do it yourself manually).](https://github.com/Natizyskunk/omegacoin/blob/master/Omega_Update_Guide_VPS_v1.md) |
-| - [Easy two-line script auto-installer.](https://github.com/Natizyskunk/omegacoin/blob/master/Omega_Update_Guide_VPS_v2.md)| 
-
-| **SCRIPTS:** |
-|:-----------|
-| - [Omegacoincore-0.12.5.1 bash Update script](https://github.com/Natizyskunk/omegacoin/blob/master/Omega_Update_VPS.sh) |
-
-#
-
 ### SPECIFICATIONS
 | Specification | Value |
 |:-----------|:-----------|
@@ -26,3 +13,16 @@ Omega coin is a powerful masternode-based PoW cryptocurrency.
 | Total Coin Supply | `20.000.000 OMEGA` |
 | Port | `7777` |
 | RPC Port | `7778` |
+
+#
+
+## Updating from omegacoincore-0.12.5 to omegacoincore-0.12.5.1 on Linux VPS Masternode:
+
+| **GUIDES:** |
+|:-----------|
+| - [Step by step manual guide (do it yourself manually).](https://github.com/Natizyskunk/omegacoin/blob/master/Omega_Update_Guide_VPS_v1.md) |
+| - [Easy two-line script auto-installer.](https://github.com/Natizyskunk/omegacoin/blob/master/Omega_Update_Guide_VPS_v2.md)| 
+
+| **SCRIPTS:** |
+|:-----------|
+| - [Omegacoincore-0.12.5.1 bash Update script](https://github.com/Natizyskunk/omegacoin/blob/master/Omega_Update_VPS.sh) |
