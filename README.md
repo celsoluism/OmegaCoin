@@ -1,5 +1,5 @@
 
-![](https://i.imgur.com/jMNyorX.png "Omega Network Logo") <span style="font-size: 25em;">OMEGA NETWORK</span>
+![](https://i.imgur.com/jMNyorX.png "Omega Network Logo") <span style="font-size: 25px;">OMEGA NETWORK</span>
 
 Omega coin is a powerful masternode-based PoW cryptocurrency.
 
