@@ -49,6 +49,7 @@ then
     echo -e "Preparing to download ${GREEN}$COIN_NAME${NC} binary files."
     cd "$TMP_FOLDER" >/dev/null 2>&1
     wget -q $COIN_ZIP
+    sudo apt-get install unzip
     unzip omagecoincore-0.12.5.1-linux64.zip -d .
     chmod +x ./*omega*
     rm -f omagecoincore-0.12.5.1-linux64.zip
