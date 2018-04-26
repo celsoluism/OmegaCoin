@@ -2,7 +2,7 @@
 
 This Installation GUIDE will show you how to Update your Omegacoin Masternode to the latest omegacoincore-0.12.5.1 release on any linux VPS (Vultr for this guide).
 
-**Linux VPS Masternode Update**
+**-Linux VPS Masternode Update-**
 
 Shell script to run as Root to update a [Omegacoin Masternode](http://omegacoin.network/) on a Linux server running Ubuntu 16.04. Use it on your own risk.
 ```
