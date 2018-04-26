@@ -3,6 +3,8 @@
 # OMEGA NETWORK
 Omega coin is a powerful masternode-based PoW cryptocurrency.
 
+#
+
 ### SPECIFICATIONS
 | Specification | Value |
 |:-----------|:-----------|
@@ -13,8 +15,6 @@ Omega coin is a powerful masternode-based PoW cryptocurrency.
 | Total Coin Supply | `20.000.000 OMEGA` |
 | Port | `7777` |
 | RPC Port | `7778` |
-
-#
 
 ## Updating from omegacoincore-0.12.5 to omegacoincore-0.12.5.1 on Linux VPS Masternode:
 
