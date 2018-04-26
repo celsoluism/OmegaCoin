@@ -52,7 +52,6 @@ function remove_old_config() {
   cd .omegacoincore/
   mkdir /tmp_omegacoin_backup && mv omegacoin.conf masternode.conf wallet.dat /tmp_omegacoin_backup/
   rm -rf *
-  # rm -rf !("omegacoin.conf"|"masternode.conf"|"wallet.dat")
   mv /tmp_omegacoin_backup/* . && rmdir /tmp_omegacoin_backup
 }
 
