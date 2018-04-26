@@ -51,10 +51,10 @@ then
     wget -q $COIN_ZIP
     sudo apt-get install unzip
     unzip omagecoincore-0.12.5.1-linux64.zip -d .
-    chmod +x ./*omega*
+    chmod 775 ./*omega*
     rm -f omagecoincore-0.12.5.1-linux64.zip
-    chmod +x ./$COIN_DAEMON
-    chmod +x ./$COIN_CLI
+    chmod 775 ./$COIN_DAEMON
+    chmod 775 ./$COIN_CLI
     cp $COIN_DAEMON $COIN_CLI $COIN_PATH
     cd - >/dev/null 2>&1
     rm -rf "$TMP_FOLDER" >/dev/null 2>&1
