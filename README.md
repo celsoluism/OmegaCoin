@@ -14,7 +14,7 @@ Omega coin is a powerful masternode-based PoW cryptocurrency.
 | Masternode Reward | `80% ~ 30%` |
 | Total Coin Supply | `20.000.000 OMEGA` |
 | Port | `7777` |
-| RPC Port | `7778` |
+| RPC Port | `7778` | <BR />
 
 
 ## About Us
@@ -22,7 +22,7 @@ Omega coin is a powerful masternode-based PoW cryptocurrency.
 - [BitcoinTalk Announcement](https://bitcointalk.org/index.php?topic=2957981)
 - [Discord](https://discord.gg/5Yk4Umb)
 - [Twiiter](https://twitter.com/Omega_Crypto)
-- [Telegram](https://t.me/joinchat/H_heNRC8Nw1L26so_Uxkkg)
+- [Telegram](https://t.me/joinchat/H_heNRC8Nw1L26so_Uxkkg)  <BR />
 
 
 ## Updating from Omegacoincore-0.12.5 to Omegacoincore-0.12.5.1 on Linux VPS Masternode
