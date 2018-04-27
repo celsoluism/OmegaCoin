@@ -15,13 +15,13 @@ Hit Enter.
 
 4. Download and install new [latest wallet 0.12.5.1 release on Github](https://github.com/omegacoinnetwork/omegacoin/releases).
 
-5.a. Add the following lines into omegacoin.conf (if they dont exist).
+5. a. Add the following lines into omegacoin.conf (if they dont exist).
 ```
 addnode=142.208.127.121
 addnode=154.208.127.121
 addnode=142.208.122.127
 ```
-5.b. Optional & additional node list (thx to @Mr_F#6171 & @bobdesign#6891 from Official Omegacoin Discord):
+5. b. Optional & additional node list (thx to @Mr_F#6171 & @bobdesign#6891 from Official Omegacoin Discord):
 ```
 addnode=142.208.127.121
 addnode=154.208.127.121
