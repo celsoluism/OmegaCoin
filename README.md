@@ -51,18 +51,18 @@ Omega coin is a powerful masternode-based PoW cryptocurrency.
 
 | **GUIDE:** |
 |:-----------|
-| - [Get queue position.](https://github.com/Natizyskunk/omegacoin/blob/master/contrib/masternodes-updates/get_queue_position_guide.md) |
+| - [Get queue position.](https://github.com/Natizyskunk/omegacoin/blob/master/contrib/masternodes-tools/get_queue_position_guide.md) |
 
 | **SCRIPTS:** |
 |:-----------|
-| - [get_queue_position.sh](https://github.com/Natizyskunk/omegacoin/blob/master/contrib/masternodes-updates/get_queue_position.sh) |
+| - [get_queue_position.sh](https://github.com/Natizyskunk/omegacoin/blob/master/contrib/masternodes-tools/get_queue_position.sh) |
 
 
 ## SWAPFILE
 
 | **GUIDE:** |
 |:-----------|
-| - [SwapFiles (Increasing VPS virtual memory).](https://github.com/Natizyskunk/omegacoin/blob/master/contrib/masternodes-updates/swapfile_vps_virtual_mem_increase.md) |
+| - [SwapFiles (Increasing VPS virtual memory).](https://github.com/Natizyskunk/omegacoin/blob/master/contrib/masternodes-tools/swapfile_vps_virtual_mem_increase.md) |
 
 | **SCRIPTS:** |
 |:-----------|
