@@ -16,7 +16,6 @@ Omega coin is a powerful masternode-based PoW cryptocurrency.
 | Port | `7777` |
 | RPC Port | `7778` |
 
-#
 
 ## About Us
 - [Website](http://omegacoin.network)
@@ -25,7 +24,6 @@ Omega coin is a powerful masternode-based PoW cryptocurrency.
 - [Twiiter](https://twitter.com/Omega_Crypto)
 - [Telegram](https://t.me/joinchat/H_heNRC8Nw1L26so_Uxkkg)
 
-#
 
 ## Updating from Omegacoincore-0.12.5 to Omegacoincore-0.12.5.1 on Linux VPS Masternode
 
