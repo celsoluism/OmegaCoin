@@ -1,4 +1,4 @@
-# Omegacoin blockchain sync fix for Windows wallet
+# Omegacoin blockchain sync fix for Windows wallet 0.12.5.1
 **Guide by @click2install#9625 on Official Omegacoin Discord server.**
 
 There is a process to update your wallet on your local PC that is different to the scripts/guides that have been provided, it is as follows:
