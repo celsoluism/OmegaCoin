@@ -4,7 +4,7 @@
 ### DONATIONS
 **if this is useful, donations are welcome: OMEGA: oPfxf87Zk4zPKnDBdgdfXx4mPVM1eeCcZB**
 
-1. Stop the daemon
+1. Stop the daemon.
 ```
 omegacoin-cli stop
  ```
@@ -41,11 +41,11 @@ rm -rf n*
 rm -rf p*
 rm -rf w*
 ```
-6. Start the daemon
+6. Start the daemon.
 ```
 omegacoind -daemon
 ```
-7. Check the status
+7. Check the status.
 ```
 omegacoin-cli getinfo
 ```
