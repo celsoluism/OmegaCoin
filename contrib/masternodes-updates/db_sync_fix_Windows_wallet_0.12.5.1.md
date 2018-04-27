@@ -6,7 +6,7 @@ There is a process to update your wallet on your local PC that is different to t
 1. Shutdown your wallet and wait 30-60 sec to be fully close.
 
 2. Browse to your AppData folder location. Win+R
-```
+```none
 %AppData%\omegaCoinCore
 ```
 Hit Enter.
