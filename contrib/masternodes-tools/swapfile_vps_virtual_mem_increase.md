@@ -9,7 +9,6 @@ sudo swapon swapfile
 sudo nano etc/fstab
 /swapfile none swap sw 0 0
 ```
-Infos: <BR />
 bs=1024k(x1Mo) count=1024 // Swapfile of 1Mo <BR />
 bs=1024k(x2Mo) count=2048 // Swapfile of 2Mo <BR />
 bs=1024k(x512Mo) count=524288 // Swapfile of 512Mo <BR />
