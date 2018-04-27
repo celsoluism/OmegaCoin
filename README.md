@@ -27,11 +27,11 @@ Omega coin is a powerful masternode-based PoW cryptocurrency.
 
 ## Updating from Omegacoincore-0.12.5 to Omegacoincore-0.12.5.1 on Linux VPS Masternode
 
-| **GUIDES:** |
+| **OMEGENCOINCORE-0.12.5.1-lINUX64 UPDATE GUIDES:** |
 |:-----------|
 | - [Step by step manual guide (do it yourself manually).](https://github.com/Natizyskunk/omegacoin/blob/master/Omega_Update_Guide_VPS_v1.md) |
 | - [Easy two-line script auto-installer.](https://github.com/Natizyskunk/omegacoin/blob/master/Omega_Update_Guide_VPS_v2.md)| 
 
 | **SCRIPTS:** |
 |:-----------|
-| - [Omegacoincore-0.12.5.1 bash Update script](https://github.com/Natizyskunk/omegacoin/blob/master/Omega_Update_VPS.sh) |
+| - [Omegacoincore-0.12.5 to Omegacoincore-0.12.5.1 bash auto Update script](https://github.com/Natizyskunk/omegacoin/blob/master/Omega_Update_VPS.sh) |
