@@ -33,7 +33,7 @@ addnode=142.208.122.127
 
 #
 
-if it doesn't sync after 15-20 minutes, let us know via Discord. it can sometimes take longer than this but if not within this time it's usually a problem.
+if it doesn't sync after 30 minutes, let us know via Discord. it can sometimes take longer than this but if not within this time it's usually a problem.
 
 ## IMPORTANT NOTE: 
 **!!! If you do not follow these instructions and do not delete the existing files/folders and you manage to get your wallet to sync, it will be on the old blockchain and you will lose coins if you try any transactions !!!**
