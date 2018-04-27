@@ -51,7 +51,7 @@ Omega coin is a powerful masternode-based PoW cryptocurrency.
 
 | **GUIDE:** |
 |:-----------|
-| - [Get queue position.](https://github.com/Natizyskunk/omegacoin/blob/master/contrib/masternodes-tools/get_queue_position_guide.md) |
+| - [Get MN queue position.](https://github.com/Natizyskunk/omegacoin/blob/master/contrib/masternodes-tools/get_queue_position_guide.md) |
 
 | **SCRIPTS:** |
 |:-----------|
