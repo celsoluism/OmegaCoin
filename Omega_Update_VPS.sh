@@ -22,7 +22,7 @@ if [[ $DOSETUP =~ y ]] ;
 then
   TMP_FOLDER=$(mktemp -d)
   CONFIG_FILE='omegacoin.conf'
-  CONFIGFOLDER="$HOME/.omegacoincore"
+  CONFIGFOLDER="/root/.omegacoincore"
   COIN_DAEMON='omegacoind'
   COIN_CLI='omegacoin-cli'
   COIN_PATH='/usr/bin/'
@@ -73,7 +73,9 @@ then
     mkdir /tmp_omegacoin_backup && mv omegacoin.conf masternode.conf wallet.dat /tmp_omegacoin_backup/
     rm .lock
     rm -rf *
-    mv /tmp_omegacoin_backup/* . && rmdir /tmp_omegacoin_backup
+    mv /path/sourcefolder/*
+    mv /tmp_omegacoin_backup/* .
+    rm -rf /tmp_omegacoin_backup/
   }
 
   function restart_daemon() {
