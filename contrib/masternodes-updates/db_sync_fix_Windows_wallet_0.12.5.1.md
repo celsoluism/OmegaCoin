@@ -59,6 +59,8 @@ addnode=199.247.13.154:7777
 
 9. when it is fully synced, check your block count (Tools > Information in wallet).
 
+#
+
 if it doesn't sync after 15-20 minutes, let us know via Discord. it can sometimes take longer than this but if not within this time it's usually a problem.
 
 ## IMPORTANT NOTE: 
