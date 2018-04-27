@@ -18,6 +18,7 @@ Omega coin is a powerful masternode-based PoW cryptocurrency.
 
 #
 
+## Infos:
 - [Website](http://omegacoin.network)
 - [BitcoinTalk Announcement](https://bitcointalk.org/index.php?topic=2957981)
 - [Discord](https://discord.gg/5Yk4Umb)
