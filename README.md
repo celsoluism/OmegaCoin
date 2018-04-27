@@ -34,17 +34,17 @@ Omega coin is a powerful masternode-based PoW cryptocurrency.
 
 | **SCRIPTS:** |
 |:-----------|
-| - [Bash auto Update script](https://github.com/Natizyskunk/omegacoin/blob/master/contrib/masternodes-updates/Omega_Update_VPS.sh) |
+| - [Bash auto Update.](https://github.com/Natizyskunk/omegacoin/blob/master/contrib/masternodes-updates/Omega_Update_VPS.sh) |
 
 
 ## Omegacoin blockchain sync fix for Windows wallet 0.12.5.1
 | **GUIDE:** |
 |:-----------|
-| - [db sync fix - Windows wallet 0.12.5.1](https://github.com/Natizyskunk/omegacoin/blob/master/contrib/masternodes-updates/db_sync_fix_Windows_wallet_0.12.5.1.md) |
+| - [db sync fix - Windows wallet 0.12.5.1.](https://github.com/Natizyskunk/omegacoin/blob/master/contrib/masternodes-updates/db_sync_fix_Windows_wallet_0.12.5.1.md) |
 
 | **SCRIPTS:** |
 |:-----------|
-| - [Not released yet](https://#) |
+| - [Not released yet.](https://#) |
 
 
 ## Get VPS Masternode queue position
@@ -66,4 +66,4 @@ Omega coin is a powerful masternode-based PoW cryptocurrency.
 
 | **SCRIPTS:** |
 |:-----------|
-| - [Not released yet](https://#) |
+| - [Not released yet.](https://#) |
