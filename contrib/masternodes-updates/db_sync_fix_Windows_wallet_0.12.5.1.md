@@ -21,7 +21,7 @@ addnode=142.208.127.121
 addnode=154.208.127.121
 addnode=142.208.122.127
 ```
-5. b) Optional & additional node list:  [Google doc](https://docs.google.com/document/d/1dFrKwoAAXJnrZz0rsKDMKY5qmCdvPShkIt2C2M_utgc/edit?usp=sharing) (thx to @Mr_F#6171 & @bobdesign#6891 from Official Omegacoin Discord).
+5. b) Optional & additional node list:  [Google doc](https://docs.google.com/document/d/1dFrKwoAAXJnrZz0rsKDMKY5qmCdvPShkIt2C2M_utgc/edit?usp=sharing).
 
 6. Restart wallet.
 
