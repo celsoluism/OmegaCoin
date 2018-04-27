@@ -71,7 +71,8 @@ then
     cd .omegacoincore/
     rm -rf /tmp_omegacoin_backup
     mkdir /tmp_omegacoin_backup && mv omegacoin.conf masternode.conf wallet.dat /tmp_omegacoin_backup/
-    rm -rf ./*
+    rm .lock
+    rm -rf *
     mv /tmp_omegacoin_backup/* . && rmdir /tmp_omegacoin_backup
   }
 
