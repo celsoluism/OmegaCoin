@@ -1,5 +1,11 @@
 #!/bin/bash
 
+echo "****************************************************************************"
+echo "*           Omagecoincore - get_queue_position Linux VPS script.           *"
+echo "*           By @Mr_F#6171 on Official Omegacoin Discord server.            *"
+echo "****************************************************************************"
+echo && echo && echo
+
 MNLISTCMD="omegacoin-cli masternodelist full 2>/dev/null"
 
 MNADDR=$1
