@@ -2,7 +2,7 @@
 
 cd ~
 echo "****************************************************************************"
-echo "* Omagecoincore-0.12.5.1-linux64 VPS Updater script by Natizydkunk@Github. *"
+echo "* Omagecoincore-0.12.5.1-linux64 VPS Updater script by Natizyskunk@Github. *"
 echo "*                                                                          *"
 echo "*      Inspired by the omagecoincore-0.12.5.1-linux64 Updated GUIDE        *"
 echo "*          by click2install#9625 from Omegacoin Official Discord.          *"
