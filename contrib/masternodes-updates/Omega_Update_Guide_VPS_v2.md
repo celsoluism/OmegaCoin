@@ -1,7 +1,7 @@
 ## [GUIDE v2] omagecoincore-0.12.5.1-linux64 VPS Update by Natizyskunk@Github.
 
-This Installation GUIDE will show you how to Update your Omegacoin Masternode from omegacoincore-0.12.5 or older to the new latest omegacoincore-0.12.5.1 release on any linux VPS (Vultr for this guide).
-Please note that this guide is not suited for First MN Installation !!
+This Installation GUIDE will show you how to Update your Omegacoin Masternode from omegacoincore-0.12.5 or older to the new latest omegacoincore-0.12.5.1 release on any linux VPS (Vultr for this guide). <BR />
+**Please note that this guide is not suited for First MN Installation !!**
 
 **- Linux VPS Masternode Update:**
 
