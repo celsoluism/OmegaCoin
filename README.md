@@ -32,18 +32,18 @@ Omega coin is a powerful masternode-based PoW cryptocurrency.
 | **GUIDES:** |
 |:-----------|
 | - [Step by step manual guide (do it yourself manually).](/contrib/masternodes-updates/Omega_Update_Guide_VPS_v1.md) |
-| - [Easy two-line script auto-installer.](https://github.com/Natizyskunk/omegacoin/blob/master/contrib/masternodes-updates/Omega_Update_Guide_VPS_v2.md)| 
+| - [Easy two-line script auto-installer.](/contrib/masternodes-updates/Omega_Update_Guide_VPS_v2.md)| 
 
 | **SCRIPTS:** |
 |:-----------|
-| - [Bash auto Update.](https://github.com/Natizyskunk/omegacoin/blob/master/contrib/masternodes-updates/Omega_Update_VPS.sh) |
+| - [Bash auto Update.](/contrib/masternodes-updates/Omega_Update_VPS.sh) |
 
 
 ## Omegacoin blockchain sync fix for Windows wallet 0.12.5.1
 
 | **GUIDE:** |
 |:-----------|
-| - [db sync fix - Windows wallet 0.12.5.1.](https://github.com/Natizyskunk/omegacoin/blob/master/contrib/masternodes-updates/db_sync_fix_Windows_wallet_0.12.5.1.md) |
+| - [db sync fix - Windows wallet 0.12.5.1.](/contrib/masternodes-updates/db_sync_fix_Windows_wallet_0.12.5.1.md) |
 
 | **SCRIPTS:** |
 |:-----------|
@@ -54,18 +54,18 @@ Omega coin is a powerful masternode-based PoW cryptocurrency.
 
 | **GUIDE:** |
 |:-----------|
-| - [Get MN queue position.](https://github.com/Natizyskunk/omegacoin/blob/master/contrib/masternodes-tools/get_queue_position_guide.md) |
+| - [Get MN queue position.](/contrib/masternodes-tools/get_queue_position_guide.md) |
 
 | **SCRIPTS:** |
 |:-----------|
-| - [get_queue_position.sh](https://github.com/Natizyskunk/omegacoin/blob/master/contrib/masternodes-tools/get_queue_position.sh) |
+| - [get_queue_position.sh](/contrib/masternodes-tools/get_queue_position.sh) |
 
 
 ## SWAPFILE
 
 | **GUIDE:** |
 |:-----------|
-| - [SwapFiles (Increasing VPS virtual memory).](https://github.com/Natizyskunk/omegacoin/blob/master/contrib/masternodes-tools/swapfile_vps_virtual_mem_increase.md) |
+| - [SwapFiles (Increasing VPS virtual memory).](/contrib/masternodes-tools/swapfile_vps_virtual_mem_increase.md) |
 
 | **SCRIPTS:** |
 |:-----------|
