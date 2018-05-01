@@ -6,6 +6,7 @@
 Omega coin is a powerful masternode-based PoW cryptocurrency.
 
 ### SPECIFICATIONS
+
 | Specification | Value |
 |:-----------|:-----------|
 | Block Spacing | `80 seconds` |
@@ -18,6 +19,7 @@ Omega coin is a powerful masternode-based PoW cryptocurrency.
 
 
 ## About Us
+
 - [Website](http://omegacoin.network)
 - [BitcoinTalk Announcement](https://bitcointalk.org/index.php?topic=2957981)
 - [Discord](https://discord.gg/5Yk4Umb)
@@ -38,6 +40,7 @@ Omega coin is a powerful masternode-based PoW cryptocurrency.
 
 
 ## Omegacoin blockchain sync fix for Windows wallet 0.12.5.1
+
 | **GUIDE:** |
 |:-----------|
 | - [db sync fix - Windows wallet 0.12.5.1.](https://github.com/Natizyskunk/omegacoin/blob/master/contrib/masternodes-updates/db_sync_fix_Windows_wallet_0.12.5.1.md) |
