@@ -31,7 +31,7 @@ Omega coin is a powerful masternode-based PoW cryptocurrency.
 
 | **GUIDES:** |
 |:-----------|
-| - [Step by step manual guide (do it yourself manually).](https://github.com/Natizyskunk/omegacoin/blob/master/contrib/masternodes-updates/Omega_Update_Guide_VPS_v1.md) |
+| - [Step by step manual guide (do it yourself manually).](/omegacoin/blob/master/contrib/masternodes-updates/Omega_Update_Guide_VPS_v1.md) |
 | - [Easy two-line script auto-installer.](https://github.com/Natizyskunk/omegacoin/blob/master/contrib/masternodes-updates/Omega_Update_Guide_VPS_v2.md)| 
 
 | **SCRIPTS:** |
