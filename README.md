@@ -67,10 +67,3 @@ Omega coin is a powerful masternode-based PoW cryptocurrency.
 | **SCRIPTS:** |
 |:-----------|
 | - [Not released yet.](https://#) |
-
-
-## new wallet (latest-release) updated node list.
-
-| **GUIDE:** |
-|:-----------|
-| - [Node list.](https://github.com/Natizyskunk/omegacoin/blob/master/contrib/masternodes-updates/AddNodes.md) |
