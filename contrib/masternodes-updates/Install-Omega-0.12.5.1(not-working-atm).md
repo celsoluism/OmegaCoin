@@ -70,6 +70,14 @@ function install_swap_file {
   sudo echo "/mnt/swap.img none swap sw 0 0" >> /etc/fstab
   vm.swappiness=60
 }
+
+function configure_firewall {
+  sudo ufw allow ssh/tcp
+  sudo ufw limit ssh/tcp
+  sudo ufw logging on
+  echo "y" | sudo ufw enable
+  sudo ufw status
+}
  
 function stop_daemon {
   omegacoin-cli stop
