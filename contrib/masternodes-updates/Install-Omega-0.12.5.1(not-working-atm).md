@@ -57,9 +57,23 @@ function install_dependencies {
   sudo apt-get -y dist-upgrade
 }
 
- function stop_daemon {
-   omegacoin-cli stop
- }
+function install_swap_file {
+  cd /
+  swapoff -a
+  sudo touch /mnt/swap.img
+  sudo chmod 755 /mnt/swap.img
+  sudo dd if=/dev/zero of=/mnt/swap.img bs=1024 count=1048576
+  sudo mkswap /mnt/swap.img
+  sudo swapon /mnt/swap.img
+  sudo free
+  sudo nano etc/fstab
+  sudo echo "/mnt/swap.img none swap sw 0 0" >> /etc/fstab
+  vm.swappiness=60
+}
+ 
+function stop_daemon {
+  omegacoin-cli stop
+}
 
  function remove_binaries {
    sudo rm -f /usr/bin/*omega*
@@ -135,6 +149,7 @@ function install_dependencies {
 
   function setup_node() {
     install_dependencies
+	install_swap_file
 	stop_daemon 
     remove_binaries
     download_node
