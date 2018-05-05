@@ -198,6 +198,209 @@ then
 		echo "y" | sudo ufw enable >/dev/null 2>&1
 		sudo ufw status
 	}
+	
+	function configure_systemd() {
+		cat << EOF > /etc/systemd/system/$OMEGAUSER.service
+		[Unit]
+		Description=OMEGA service
+		After=network.target
+
+		[Service]
+		User=$OMEGAUSER
+		Group=$OMEGAUSER
+
+		Type=forking
+		PIDFile=$OMEGAFOLDER/$OMEGAUSER.pid
+
+		ExecStart=$OMEGA_DAEMON -daemon -pid=$OMEGAFOLDER/$OMEGAUSER.pid -conf=$OMEGAFOLDER/$CONFIG_FILE -datadir=$OMEGAFOLDER
+		ExecStop=-$OMEGA_CLI -conf=$OMEGAFOLDER/$CONFIG_FILE -datadir=$OMEGAFOLDER stop
+
+		Restart=always
+		PrivateTmp=true
+		TimeoutStopSec=60s
+		TimeoutStartSec=2s
+		StartLimitInterval=120s
+		StartLimitBurst=5
+
+		[Install]
+		WantedBy=multi-user.target
+		EOF
+
+		systemctl daemon-reload
+		sleep 3
+		systemctl start $OMEGAUSER.service
+		systemctl enable $OMEGAUSER.service
+
+		if [[ -z "$(ps axo user:15,cmd:100 | egrep ^$OMEGAUSER | grep $OMEGA_DAEMON)" ]]; then
+			echo -e "${RED}OMEGA is not running${NC}, please investigate. You should start by running the following commands as root:"
+			echo -e "${GREEN}systemctl start $OMEGAUSER.service"
+			echo -e "systemctl status $OMEGAUSER.service"
+			echo -e "less /var/log/syslog${NC}"
+			exit 1
+		fi
+	}
+
+	function ask_port() {
+read -p "Omega Port: " -i $DEFAULTOMEGAPORT -e OMEGAPORT
+: ${OMEGAPORT:=$DEFAULTOMEGAPORT}
+}
+
+function ask_user() {
+  read -p "Omega user: " -i $DEFAULTOMEGAUSER -e OMEGAUSER
+  : ${OMEGAUSER:=$DEFAULTOMEGAUSER}
+
+  if [ -z "$(getent passwd $OMEGAUSER)" ]; then
+    USERPASS=$(pwgen -s 12 1)
+    useradd -m $OMEGAUSER
+    echo "$OMEGAUSER:$USERPASS" | chpasswd
+
+    OMEGAHOME=$(sudo -H -u $OMEGAUSER bash -c 'echo $HOME')
+    DEFAULTOMEGAFOLDER="$OMEGAHOME/.omegacoincore"
+    read -p "Configuration folder: " -i $DEFAULTOMEGAFOLDER -e OMEGAFOLDER
+    : ${OMEGAFOLDER:=$DEFAULTOMEGAFOLDER}
+    mkdir -p $OMEGAFOLDER
+    chown -R $OMEGAUSER: $OMEGAFOLDER >/dev/null
+  else
+    clear
+    echo -e "${RED}User exits. Please enter another username: ${NC}"
+    ask_user
+  fi
+}
+
+function check_port() {
+  declare -a PORTS
+  PORTS=($(netstat -tnlp | grep $NODEIP | awk '/LISTEN/ {print $4}' | awk -F":" '{print $NF}' | sort | uniq | tr '\r\n'  ' '))
+  ask_port
+
+  while [[ ${PORTS[@]} =~ $OMEGAPORT ]] || [[ ${PORTS[@]} =~ $[OMEGAPORT-1] ]]; do
+    clear
+    echo -e "${RED}Port in use, please choose another port:${NF}"
+    ask_port
+  done
+}
+
+function create_config() {
+  RPCUSER=$(pwgen -s 8 1)
+  RPCPASSWORD=$(pwgen -s 15 1)
+  cat << EOF > $OMEGAFOLDER/$CONFIG_FILE
+rpcuser=$RPCUSER
+rpcpassword=$RPCPASSWORD
+rpcallowip=127.0.0.1
+rpcport=$[OMEGAPORT+1]
+listen=1
+server=1
+#bind=$NODEIP
+daemon=1
+port=$OMEGAPORT
+EOF
+}
+
+function create_key() {
+  echo -e "Enter your ${RED}Masternode Private Key${NC}. Leave it blank to generate a new ${RED}Masternode Private Key${NC} for you:"
+  read -e OMEGAKEY
+  if [[ -z "$OMEGAKEY" ]]; then
+    su $OMEGAUSER -c "$OMEGA_DAEMON -conf=$OMEGAFOLDER/$CONFIG_FILE -datadir=$OMEGAFOLDER"
+    sleep 30
+    if [ -z "$(ps axo user:15,cmd:100 | egrep ^$OMEGAUSER | grep $OMEGA_DAEMON)" ]; then
+     echo -e "${RED}Omega server couldn't start. Check /var/log/syslog for errors.{$NC}"
+     exit 1
+    fi
+    OMEGAKEY=$(su $OMEGAUSER -c "$OMEGA_CLI -conf=$OMEGAFOLDER/$CONFIG_FILE -datadir=$OMEGAFOLDER masternode genkey")
+    if [ "$?" -gt "0" ];
+      then
+       echo -e "${RED}Wallet not fully loaded, need to wait a bit more time. ${NC}"
+       sleep 30
+       OMEGAKEY=$(su $OMEGAUSER -c "$OMEGA_CLI -conf=$OMEGAFOLDER/$CONFIG_FILE -datadir=$OMEGAFOLDER masternode genkey")
+    fi
+    su $OMEGAUSER -c "$OMEGA_CLI -conf=$OMEGAFOLDER/$CONFIG_FILE -datadir=$OMEGAFOLDER stop"
+  fi
+}
+
+function update_config() {
+  sed -i 's/daemon=1/daemon=0/' $OMEGAFOLDER/$CONFIG_FILE
+  cat << EOF >> $OMEGAFOLDER/$CONFIG_FILE
+maxconnections=256
+externalip=$NODEIP
+masternode=1
+masternodeaddr=$NODEIP:$OMEGAPORT
+masternodeprivkey=$OMEGAKEY
+EOF
+  chown -R $OMEGAUSER: $OMEGAFOLDER >/dev/null
+}
+
+
+function install_sentinel() {
+  SENTINELPORT=$[10001+$OMEGAPORT]
+  echo -e "${GREEN}Install sentinel.${NC}"
+  apt-get install virtualenv >/dev/null 2>&1
+  git clone $SENTINEL_REPO $OMEGAHOME/sentinel >/dev/null 2>&1
+  cd $OMEGAHOME/sentinel
+  virtualenv ./venv >/dev/null 2>&1  
+  ./venv/bin/pip install -r requirements.txt >/dev/null 2>&1
+  cd $OMEGAHOME
+  sed -i "s/19998/$SENTINELPORT/g" $OMEGAHOME/sentinel/test/unit/test_dash_config.py
+  echo  "* * * * * cd $OMEGAHOME/sentinel && ./venv/bin/python bin/sentinel.py >> ~/sentinel.log 2>&1" > $OMEGAHOME/omega_cron
+  chown -R $OMEGAUSER: $OMEGAHOME/sentinel >/dev/null 2>&1
+  chown $OMEGAUSER: $OMEGAHOME/omega_cron
+  crontab -u $OMEGAUSER $OMEGAHOME/omega_cron
+  rm omega_cron >/dev/null 2>&1
+}
+
+function important_information() {
+ echo
+ echo -e "================================================================================================================================"
+ echo -e "Omega Masternode is up and running as user ${GREEN}$OMEGAUSER${NC} and it is listening on port ${GREEN}$OMEGAPORT${NC}."
+ echo -e "${GREEN}$OMEGAUSER${NC} password is ${RED}$USERPASS${NC}"
+ echo -e "Configuration file is: ${RED}$OMEGAFOLDER/$CONFIG_FILE${NC}"
+ echo -e "Start: ${RED}systemctl start $OMEGAUSER.service${NC}"
+ echo -e "Stop: ${RED}systemctl stop $OMEGAUSER.service${NC}"
+ echo -e "VPS_IP:PORT ${RED}$NODEIP:$OMEGAPORT${NC}"
+ echo -e "MASTERNODE PRIVATEKEY is: ${RED}$OMEGAKEY${NC}"
+ echo -e "Please check Omega is running with the following command: ${GREEN}systemctl status $OMEGAUSER.service${NC}"
+ echo -e "================================================================================================================================"
+}
+
+function setup_node() {
+  get_ip
+  ask_user
+  check_port
+  create_config
+  create_key
+  update_config
+  enable_firewall
+  configure_systemd
+  install_sentinel
+  important_information
+}
+
+
+##### Main #####
+clear
+
+checks
+if [[ ("$NEW_OMEGA" == "y" || "$NEW_OMEGA" == "Y") ]]; then
+  setup_node
+  exit 0
+elif [[ "$NEW_OMEGA" == "new" ]]; then
+  prepare_system
+  compile_node
+  setup_node
+else
+  echo -e "${GREEN}Omega already running.${NC}"
+  exit 0
+fi
+
+
+
+
+
+
+
+
+
+###############################################################
+######################OLD START HERE ##########################
+###############################################################
 	 
 	function stop_daemon {
 	  omegacoin-cli stop
